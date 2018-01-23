@@ -1,0 +1,2 @@
+C:\Users\chuy\AppData\Local\Temp\ccMIYFlh.o:operationtest.c:(.text+0x2e): undefined reference to `add'
+collect2.exe: error: ld returned 1 exit status
