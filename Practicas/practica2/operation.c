@@ -3,7 +3,7 @@
 #include "operation.h"
 
 int add(int a, int b){
-  long c =  a + b;
+  long c =  (long) a + b;
 
   assert(c< 2147483647 && c> -2147483647);
   return a+b;

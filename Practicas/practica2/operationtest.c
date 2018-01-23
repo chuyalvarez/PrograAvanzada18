@@ -10,9 +10,12 @@ void printTestMessage(int condition, char *messagePassed, char *messageFailed){
 }
 
 int testAddition(){
-  int a = 36;
+  int a = 2147483647;
   int b = 2647;
 
+  long c = 21474836470;
+
+  printf("%ld\n",c );
   int result = add(a,b);
   int expected = a + b;
 
