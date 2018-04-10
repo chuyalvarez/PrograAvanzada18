@@ -6,26 +6,30 @@ typedef struct s{
   char lastName[20];
   short Id;
   char semester[3];
-  char free
+  char free;
+
 } Student;
 
 int main(int argc, char const *argv[]) {
+  char *search = argv[1];
+  char * update = argv[2];
   char *dbName = "student.dat";
   Student myStudent;
-  char *searchName = argv[1];
-
-  FILE *data = fopen(dbName,'rb');
+  FILE *data = fopen(dbName,'r+');
   while (1)
   {
     fread(&myStudent,sizeof(Student),1,data);
     if (feof(data)){
       break;
     }
-    if(!strcmp(myStudent.firstName,searchName)){
-      printf("Student info: \n");
-      printf("first name: %s\n", myStudent.firstName);
-      printf("Last name: %s\n", myStudent.lastName);
+    if(!strcmp(myStudent.firstName,search)){
+      myStudent.free = 1;+-
+      fseek(data,-1*sizeof(Student),SEEK_CUR);
+      fwrite(&myStudent,sizeof(student),1,data);
+      break;
     }
   }
+
   return 0;
+
 }
